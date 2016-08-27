@@ -1,18 +1,10 @@
 
 import { combineReducers } from 'redux';
+import { getNewGrid } from '../lib/index.js';
 import gameConstants from '../gameConstants.js';
 import * as actions from '../actions/index.js';
 
 const { initialGrid, tetrominos, blockUnit } = gameConstants;
-
-function getNewGrid(grid, tetromino, color) {
-	const res = [...grid];
-	for (let j = 0; j < tetromino.length; j++) {
-		const { x, y } = tetromino[j];
-		res[x][y] = color;
-	}
-	return res;
-}
 
 function menuStatus(state = true, action) {
 	switch (action.type) {
@@ -114,6 +106,9 @@ const tetrisApp = combineReducers({
 });
 
 export default tetrisApp;
+
+
+
 
 
 
