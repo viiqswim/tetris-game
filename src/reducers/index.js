@@ -1,4 +1,3 @@
-
 import { combineReducers } from 'redux';
 import { getNewClearedGrid } from '../lib/index.js';
 import gameConstants from '../gameConstants.js';
@@ -21,6 +20,8 @@ function isGameOver(state = false, action) {
 	switch (action.type) {
 	case actions.GAME_OVER:
 		return true;
+	case actions.START_GAME:
+		return false;
 	default:
 		return state;
 	}
@@ -110,18 +111,3 @@ const tetrisApp = combineReducers({
 });
 
 export default tetrisApp;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
